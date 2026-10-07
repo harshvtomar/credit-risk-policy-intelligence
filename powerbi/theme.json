@@ -1,0 +1,12 @@
+{
+  "name": "Analytics Portfolio",
+  "dataColors": [
+    "#2474A6",
+    "#E6A23C",
+    "#2C8D75",
+    "#9259A6"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#17365D",
+  "tableAccent": "#2474A6"
+}

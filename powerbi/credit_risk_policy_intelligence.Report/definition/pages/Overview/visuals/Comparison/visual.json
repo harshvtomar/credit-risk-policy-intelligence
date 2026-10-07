@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "Comparison",
+  "position": {
+    "x": 850,
+    "y": 190,
+    "width": 410,
+    "height": 300,
+    "z": 5,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimSegment"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "DimSegment.segment",
+              "nativeQueryRef": "segment"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMonthly"
+                    }
+                  },
+                  "Property": "Applications"
+                }
+              },
+              "queryRef": "FactMonthly.Applications",
+              "nativeQueryRef": "Applications"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

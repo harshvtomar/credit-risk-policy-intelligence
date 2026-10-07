@@ -1,0 +1,9 @@
+feature,coefficient
+numeric__annual_income,-0.217020
+numeric__debt_to_income,0.465756
+numeric__credit_score,-0.898816
+numeric__loan_amount,0.212079
+numeric__prior_delinquencies,0.213894
+category__employment_Contract,-0.054554
+category__employment_Salaried,-0.485954
+category__employment_Self employed,-0.416216

@@ -1,0 +1,11 @@
+Applications
+SUM([applications])
+
+Default rate
+IF SUM([applications]) = 0 THEN NULL ELSE SUM([defaults]) / SUM([applications]) END
+
+Approval rate
+IF SUM([applications]) = 0 THEN NULL ELSE SUM([approved]) / SUM([applications]) END
+
+Policy contribution
+SUM([contribution])

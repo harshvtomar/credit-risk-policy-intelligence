@@ -1,0 +1,17 @@
+// Applications
+Applications = SUM('FactMonthly'[applications])
+
+// Default rate
+Default rate = DIVIDE(SUM('FactMonthly'[defaults]), SUM('FactMonthly'[applications]))
+
+// Approval rate
+Approval rate = DIVIDE(SUM('FactMonthly'[approved]), SUM('FactMonthly'[applications]))
+
+// Policy contribution
+Policy contribution = SUM('FactMonthly'[contribution])
+
+// Applications Previous Month
+Applications Previous Month = CALCULATE([Applications], DATEADD('DimDate'[Date], -1, MONTH))
+
+// Applications MoM Change %
+Applications MoM Change % = DIVIDE([Applications] - [Applications Previous Month], [Applications Previous Month])

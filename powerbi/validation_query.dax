@@ -1,0 +1,7 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    "Applications", [Applications],
+    "Default rate", [Default rate],
+    "Approval rate", [Approval rate],
+    "Policy contribution", [Policy contribution]
+)

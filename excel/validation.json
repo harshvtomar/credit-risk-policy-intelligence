@@ -1,0 +1,7 @@
+{
+  "engine": "Artifact Tool calculation engine; Microsoft Excel not available",
+  "all_segments_first_kpi": 2477,
+  "filtered_first_kpi": 314,
+  "extra_input_check": "Cutoff 0 denies all applications; restoring the validation cutoff restores approvals.",
+  "error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}

@@ -1,0 +1,6 @@
+feature,psi,train_missing_rate,test_missing_rate
+annual_income,0.010655,0.017327,0.010497
+debt_to_income,0.007732,0.000000,0.000000
+credit_score,0.005745,0.000000,0.000000
+loan_amount,0.003596,0.000000,0.000000
+prior_delinquencies,0.000072,0.000000,0.000000

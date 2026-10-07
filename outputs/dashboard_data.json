@@ -1,0 +1,265 @@
+{
+  "rows": [
+    {
+      "month": "2024-07",
+      "segment": "Contract",
+      "applications": 58,
+      "defaults": 19,
+      "approved": 16,
+      "approved_defaults": 4,
+      "funded_amount": 287328.14,
+      "contribution": -10810.968300000004,
+      "default_rate": 0.3275862068965517
+    },
+    {
+      "month": "2024-07",
+      "segment": "Salaried",
+      "applications": 254,
+      "defaults": 58,
+      "approved": 118,
+      "approved_defaults": 11,
+      "funded_amount": 1679115.09,
+      "contribution": 64973.28049999999,
+      "default_rate": 0.2283464566929134
+    },
+    {
+      "month": "2024-07",
+      "segment": "Self employed",
+      "applications": 79,
+      "defaults": 24,
+      "approved": 33,
+      "approved_defaults": 7,
+      "funded_amount": 430382.77999999997,
+      "contribution": -30152.575500000003,
+      "default_rate": 0.3037974683544304
+    },
+    {
+      "month": "2024-08",
+      "segment": "Contract",
+      "applications": 63,
+      "defaults": 16,
+      "approved": 12,
+      "approved_defaults": 1,
+      "funded_amount": 159054.7,
+      "contribution": -7225.991500000002,
+      "default_rate": 0.25396825396825395
+    },
+    {
+      "month": "2024-08",
+      "segment": "Salaried",
+      "applications": 267,
+      "defaults": 72,
+      "approved": 128,
+      "approved_defaults": 16,
+      "funded_amount": 2113747.25,
+      "contribution": 16907.80309999999,
+      "default_rate": 0.2696629213483146
+    },
+    {
+      "month": "2024-08",
+      "segment": "Self employed",
+      "applications": 100,
+      "defaults": 19,
+      "approved": 43,
+      "approved_defaults": 3,
+      "funded_amount": 727747.55,
+      "contribution": 46545.524099999995,
+      "default_rate": 0.19
+    },
+    {
+      "month": "2024-09",
+      "segment": "Contract",
+      "applications": 47,
+      "defaults": 11,
+      "approved": 21,
+      "approved_defaults": 1,
+      "funded_amount": 319574.69,
+      "contribution": 28255.1868,
+      "default_rate": 0.23404255319148937
+    },
+    {
+      "month": "2024-09",
+      "segment": "Salaried",
+      "applications": 244,
+      "defaults": 59,
+      "approved": 95,
+      "approved_defaults": 6,
+      "funded_amount": 1478315.85,
+      "contribution": 108262.9669,
+      "default_rate": 0.24180327868852458
+    },
+    {
+      "month": "2024-09",
+      "segment": "Self employed",
+      "applications": 87,
+      "defaults": 25,
+      "approved": 35,
+      "approved_defaults": 4,
+      "funded_amount": 577588.53,
+      "contribution": 20031.231899999995,
+      "default_rate": 0.28735632183908044
+    },
+    {
+      "month": "2024-10",
+      "segment": "Contract",
+      "applications": 49,
+      "defaults": 21,
+      "approved": 11,
+      "approved_defaults": 2,
+      "funded_amount": 227133.7,
+      "contribution": 14436.922299999998,
+      "default_rate": 0.42857142857142855
+    },
+    {
+      "month": "2024-10",
+      "segment": "Salaried",
+      "applications": 281,
+      "defaults": 84,
+      "approved": 125,
+      "approved_defaults": 22,
+      "funded_amount": 2143072.61,
+      "contribution": -35516.45650000001,
+      "default_rate": 0.298932384341637
+    },
+    {
+      "month": "2024-10",
+      "segment": "Self employed",
+      "applications": 84,
+      "defaults": 24,
+      "approved": 37,
+      "approved_defaults": 6,
+      "funded_amount": 588393.88,
+      "contribution": 193.74549999999527,
+      "default_rate": 0.2857142857142857
+    },
+    {
+      "month": "2024-11",
+      "segment": "Contract",
+      "applications": 43,
+      "defaults": 14,
+      "approved": 12,
+      "approved_defaults": 4,
+      "funded_amount": 215448.2,
+      "contribution": -31446.074,
+      "default_rate": 0.32558139534883723
+    },
+    {
+      "month": "2024-11",
+      "segment": "Salaried",
+      "applications": 293,
+      "defaults": 82,
+      "approved": 135,
+      "approved_defaults": 14,
+      "funded_amount": 2396925.15,
+      "contribution": 95097.8387,
+      "default_rate": 0.27986348122866894
+    },
+    {
+      "month": "2024-11",
+      "segment": "Self employed",
+      "applications": 85,
+      "defaults": 28,
+      "approved": 31,
+      "approved_defaults": 3,
+      "funded_amount": 549040.11,
+      "contribution": 29935.499799999994,
+      "default_rate": 0.32941176470588235
+    },
+    {
+      "month": "2024-12",
+      "segment": "Contract",
+      "applications": 54,
+      "defaults": 18,
+      "approved": 18,
+      "approved_defaults": 3,
+      "funded_amount": 214713.47,
+      "contribution": 8517.470099999999,
+      "default_rate": 0.3333333333333333
+    },
+    {
+      "month": "2024-12",
+      "segment": "Salaried",
+      "applications": 298,
+      "defaults": 81,
+      "approved": 134,
+      "approved_defaults": 15,
+      "funded_amount": 1943998.15,
+      "contribution": 70548.73259999999,
+      "default_rate": 0.27181208053691275
+    },
+    {
+      "month": "2024-12",
+      "segment": "Self employed",
+      "applications": 91,
+      "defaults": 27,
+      "approved": 41,
+      "approved_defaults": 4,
+      "funded_amount": 611589.52,
+      "contribution": 30715.5483,
+      "default_rate": 0.2967032967032967
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Applications",
+      "numerator": "applications",
+      "unit": "number"
+    },
+    {
+      "label": "Default rate",
+      "numerator": "defaults",
+      "denominator": "applications",
+      "unit": "percent"
+    },
+    {
+      "label": "Approval rate",
+      "numerator": "approved",
+      "denominator": "applications",
+      "unit": "percent"
+    },
+    {
+      "label": "Policy contribution",
+      "numerator": "contribution",
+      "unit": "usd"
+    }
+  ],
+  "series": {
+    "label": "Default rate",
+    "numerator": "defaults",
+    "denominator": "applications",
+    "unit": "percent"
+  },
+  "title": "Credit Risk & Policy Intelligence",
+  "subtitle": "Out-of-time credit analysis, validation-selected lending policy, calibration, and group audits. Dashboard covers July\u2013December 2024 originations; outcomes mature through December 2025. Simulated USD.",
+  "units": {},
+  "columns": [
+    {
+      "key": "month",
+      "label": "Month"
+    },
+    {
+      "key": "segment",
+      "label": "Employment"
+    },
+    {
+      "key": "applications",
+      "label": "Applications",
+      "unit": "number"
+    },
+    {
+      "key": "default_rate",
+      "label": "Default rate",
+      "unit": "percent"
+    },
+    {
+      "key": "approved",
+      "label": "Approved",
+      "unit": "number"
+    },
+    {
+      "key": "contribution",
+      "label": "Contribution",
+      "unit": "usd"
+    }
+  ]
+}

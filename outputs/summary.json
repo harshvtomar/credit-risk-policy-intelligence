@@ -1,0 +1,14 @@
+{
+  "train_rows": 5021,
+  "validation_rows": 2502,
+  "test_rows": 2477,
+  "test_roc_auc": 0.7370122284939429,
+  "test_average_precision": 0.5199122306256447,
+  "test_brier_score": 0.1725993245150115,
+  "test_prevalence": 0.2753330641905531,
+  "policy_threshold": 0.15999999999999998,
+  "test_approval_rate": 0.421881308033912,
+  "test_policy_contribution": 419269.6847999999,
+  "approve_all_contribution": -4930493.0602,
+  "observation_cutoff": "2025-12-31"
+}

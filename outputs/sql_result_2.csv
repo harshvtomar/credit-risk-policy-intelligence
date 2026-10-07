@@ -1,0 +1,4 @@
+split,applications,default_rate,missing_income_rate
+test,2477,0.275333,0.010497
+train,5021,0.243577,0.017327
+validation,2502,0.252598,0.014788

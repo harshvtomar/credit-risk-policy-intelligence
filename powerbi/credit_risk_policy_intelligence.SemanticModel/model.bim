@@ -1,0 +1,239 @@
+{
+  "name": "credit_risk_policy_intelligence",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "FactMonthly",
+        "columns": [
+          {
+            "name": "month",
+            "dataType": "string",
+            "sourceColumn": "month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "segment",
+            "dataType": "string",
+            "sourceColumn": "segment",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "applications",
+            "dataType": "int64",
+            "sourceColumn": "applications",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "defaults",
+            "dataType": "int64",
+            "sourceColumn": "defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "approved",
+            "dataType": "int64",
+            "sourceColumn": "approved",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "approved_defaults",
+            "dataType": "int64",
+            "sourceColumn": "approved_defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "funded_amount",
+            "dataType": "double",
+            "sourceColumn": "funded_amount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "contribution",
+            "dataType": "double",
+            "sourceColumn": "contribution",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "month_date",
+            "dataType": "dateTime",
+            "sourceColumn": "month_date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactMonthly",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(FolderPath & \"FactMonthly.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"month\", type text}, {\"segment\", type text}, {\"applications\", Int64.Type}, {\"defaults\", Int64.Type}, {\"approved\", Int64.Type}, {\"approved_defaults\", Int64.Type}, {\"funded_amount\", type number}, {\"contribution\", type number}, {\"month_date\", type date}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Applications",
+            "expression": "SUM('FactMonthly'[applications])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Default rate",
+            "expression": "DIVIDE(SUM('FactMonthly'[defaults]), SUM('FactMonthly'[applications]))",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Approval rate",
+            "expression": "DIVIDE(SUM('FactMonthly'[approved]), SUM('FactMonthly'[applications]))",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Policy contribution",
+            "expression": "SUM('FactMonthly'[contribution])",
+            "formatString": "$#,0"
+          },
+          {
+            "name": "Applications Previous Month",
+            "expression": "CALCULATE([Applications], DATEADD('DimDate'[Date], -1, MONTH))",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Applications MoM Change %",
+            "expression": "DIVIDE([Applications] - [Applications Previous Month], [Applications Previous Month])",
+            "formatString": "0.0%"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd",
+            "isKey": true
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "sourceColumn": "Month",
+            "summarizeBy": "none",
+            "sortByColumn": "MonthSort"
+          },
+          {
+            "name": "MonthSort",
+            "dataType": "int64",
+            "sourceColumn": "MonthSort",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "int64",
+            "sourceColumn": "Quarter",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(FolderPath & \"DimDate.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Date\", type date}, {\"Month\", type text}, {\"MonthSort\", Int64.Type}, {\"Year\", Int64.Type}, {\"Quarter\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimSegment",
+        "columns": [
+          {
+            "name": "segment",
+            "dataType": "string",
+            "sourceColumn": "segment",
+            "summarizeBy": "none",
+            "isKey": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimSegment",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(FolderPath & \"DimSegment.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"segment\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "FactMonthly_DimDate",
+        "fromTable": "FactMonthly",
+        "fromColumn": "month_date",
+        "toTable": "DimDate",
+        "toColumn": "Date",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "FactMonthly_DimSegment",
+        "fromTable": "FactMonthly",
+        "fromColumn": "segment",
+        "toTable": "DimSegment",
+        "toColumn": "segment",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "FolderPath",
+        "kind": "m",
+        "expression": "\"C:\\Analytics\\credit-risk-policy-intelligence\\bi\\data\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"FactMonthly\", \"DimDate\", \"DimSegment\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      }
+    ]
+  }
+}

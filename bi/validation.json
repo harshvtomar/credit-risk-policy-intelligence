@@ -1,0 +1,39 @@
+{
+  "excel": {
+    "native_file": "credit-risk-policy-intelligence.xlsx",
+    "formula_cells": 5012,
+    "tables": 2,
+    "charts": [
+      {
+        "part": "xl/drawings/charts/chart1.xml",
+        "source_formulas": [
+          "'Dashboard'!$A$23:$A$28",
+          "'Dashboard'!$B$23:$B$28"
+        ]
+      }
+    ],
+    "data_validation_rules": 2,
+    "formula_error_cells": 0,
+    "recalculation": "Segment edits and lab boundary edits passed in Artifact Tool. Microsoft Excel native app was not available."
+  },
+  "powerbi": {
+    "tables": 3,
+    "visuals": 8,
+    "source_totals_and_bindings": "passed",
+    "native_desktop_open_refresh_dax_visuals": "pending"
+  },
+  "tableau": {
+    "worksheets": 7,
+    "xml_and_packaged_sources": "passed",
+    "native_open_calculations_and_visuals": "pending",
+    "browser_native_attempt": {
+      "status": "incomplete; browser transport disconnected",
+      "applications_total": 2477,
+      "contribution_rounded_display": 419270,
+      "approval_formula": "IF SUM([Applications]) = 0 THEN NULL ELSE SUM([Approved]) / SUM([Applications]) END",
+      "formula_validation": "Tableau reported valid",
+      "publication": "pending",
+      "filter_and_calculation_result": "pending"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "KPI_3",
+  "position": {
+    "x": 950,
+    "y": 30,
+    "width": 290,
+    "height": 120,
+    "z": 3,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMonthly"
+                    }
+                  },
+                  "Property": "Policy contribution"
+                }
+              },
+              "queryRef": "FactMonthly.Policy contribution",
+              "nativeQueryRef": "Policy contribution"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

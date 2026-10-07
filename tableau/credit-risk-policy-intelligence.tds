@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<datasource inline="false" name="analytics" caption="Credit Risk &amp; Policy Intelligence (synthetic)" version="9.3">
+      <connection class="textscan" directory="Data" filename="monthly.csv" server="" password="" locale="en_US">
+        <relation name="monthly.csv" table="[monthly.csv]" type="table">
+          <columns header="yes" separator="," character-set="UTF-8">
+            <column datatype="string" name="month" ordinal="0" />
+            <column datatype="string" name="segment" ordinal="1" />
+            <column datatype="integer" name="applications" ordinal="2" />
+            <column datatype="integer" name="defaults" ordinal="3" />
+            <column datatype="integer" name="approved" ordinal="4" />
+            <column datatype="integer" name="approved_defaults" ordinal="5" />
+            <column datatype="real" name="funded_amount" ordinal="6" />
+            <column datatype="real" name="contribution" ordinal="7" />
+            <column datatype="date" name="month_date" ordinal="8" />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class="column">
+            <remote-name>month</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>segment</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[segment]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>segment</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>applications</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[applications]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>applications</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>defaults</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[defaults]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>defaults</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>approved</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[approved]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>approved</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>approved_defaults</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[approved_defaults]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>approved_defaults</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>funded_amount</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[funded_amount]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>funded_amount</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>contribution</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[contribution]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>contribution</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>month_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[month_date]</local-name>
+            <parent-name>[monthly.csv]</parent-name>
+            <remote-alias>month_date</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column name="[month]" caption="Month" datatype="string" role="dimension" type="nominal" />
+      <column name="[segment]" caption="Segment" datatype="string" role="dimension" type="nominal" />
+      <column name="[applications]" caption="Applications" datatype="integer" role="measure" type="quantitative" />
+      <column name="[defaults]" caption="Defaults" datatype="integer" role="measure" type="quantitative" />
+      <column name="[approved]" caption="Approved" datatype="integer" role="measure" type="quantitative" />
+      <column name="[approved_defaults]" caption="Approved Defaults" datatype="integer" role="measure" type="quantitative" />
+      <column name="[funded_amount]" caption="Funded Amount" datatype="real" role="measure" type="quantitative" />
+      <column name="[contribution]" caption="Contribution" datatype="real" role="measure" type="quantitative" />
+      <column name="[month_date]" caption="Month Date" datatype="date" role="dimension" type="nominal" />
+      <column name="[Calculation_KPI_0]" caption="Applications" datatype="real" role="measure" type="quantitative" default-format="#,##0">
+        <calculation class="tableau" formula="SUM([applications])" />
+      </column>
+      <column name="[Calculation_KPI_1]" caption="Default rate" datatype="real" role="measure" type="quantitative" default-format="p0.0%">
+        <calculation class="tableau" formula="IF SUM([applications]) = 0 THEN NULL ELSE SUM([defaults]) / SUM([applications]) END" />
+      </column>
+      <column name="[Calculation_KPI_2]" caption="Approval rate" datatype="real" role="measure" type="quantitative" default-format="p0.0%">
+        <calculation class="tableau" formula="IF SUM([applications]) = 0 THEN NULL ELSE SUM([approved]) / SUM([applications]) END" />
+      </column>
+      <column name="[Calculation_KPI_3]" caption="Policy contribution" datatype="real" role="measure" type="quantitative" default-format="$#,##0">
+        <calculation class="tableau" formula="SUM([contribution])" />
+      </column>
+    </datasource>
+  

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "Segment_Filter",
+  "position": {
+    "x": 20,
+    "y": 520,
+    "width": 240,
+    "height": 280,
+    "z": 6,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimSegment"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "DimSegment.segment",
+              "nativeQueryRef": "segment"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

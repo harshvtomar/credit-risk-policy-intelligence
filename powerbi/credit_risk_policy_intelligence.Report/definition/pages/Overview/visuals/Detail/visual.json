@@ -1,0 +1,108 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "Detail",
+  "position": {
+    "x": 290,
+    "y": 520,
+    "width": 970,
+    "height": 280,
+    "z": 7,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimDate"
+                    }
+                  },
+                  "Property": "Month"
+                }
+              },
+              "queryRef": "DimDate.Month",
+              "nativeQueryRef": "Month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimSegment"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "DimSegment.segment",
+              "nativeQueryRef": "segment"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMonthly"
+                    }
+                  },
+                  "Property": "Applications"
+                }
+              },
+              "queryRef": "FactMonthly.Applications",
+              "nativeQueryRef": "Applications"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMonthly"
+                    }
+                  },
+                  "Property": "Default rate"
+                }
+              },
+              "queryRef": "FactMonthly.Default rate",
+              "nativeQueryRef": "Default rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMonthly"
+                    }
+                  },
+                  "Property": "Approval rate"
+                }
+              },
+              "queryRef": "FactMonthly.Approval rate",
+              "nativeQueryRef": "Approval rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMonthly"
+                    }
+                  },
+                  "Property": "Policy contribution"
+                }
+              },
+              "queryRef": "FactMonthly.Policy contribution",
+              "nativeQueryRef": "Policy contribution"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

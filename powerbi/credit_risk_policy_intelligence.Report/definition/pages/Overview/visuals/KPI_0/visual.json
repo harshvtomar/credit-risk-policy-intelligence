@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "KPI_0",
+  "position": {
+    "x": 20,
+    "y": 30,
+    "width": 290,
+    "height": 120,
+    "z": 0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMonthly"
+                    }
+                  },
+                  "Property": "Applications"
+                }
+              },
+              "queryRef": "FactMonthly.Applications",
+              "nativeQueryRef": "Applications"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
